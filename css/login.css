@@ -1,0 +1,66 @@
+body {
+    color: #2b3e51;
+    background-color: #9f9da7;
+}
+
+#form-box {
+    background-color: #FFF;
+    width: 35%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0,0,0,0.2);
+}
+
+div {
+    display: block;
+}
+
+#login-form {
+    padding: 0 60px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+p {
+    position: relative;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0 0 0 10px;
+    margin: 0;
+    color: #8a8b8e;
+    font-style: normal;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    background: none;
+}
+
+.validation {
+    display: none;
+    position: absolute;
+    content: " ";
+    height: 60px;
+    width: 30px;
+    right: 15px;
+    top: 0px;
+}
+
+i {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 700px) {
+    
+}
