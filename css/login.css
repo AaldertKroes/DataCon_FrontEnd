@@ -114,3 +114,9 @@ i {
     padding: 10px 0;
     border-radius: 0 0 4px 4px;
 }
+
+@media only screen and (max-width: 700px) {
+    #form-box {
+        width: 70%;
+    }
+}
