@@ -7,9 +7,9 @@ let coords = [coord1, coord2, coord3];
 
 if(localStorage.getItem("currentUser") === null) window.location.replace("./html/login.html");
 
-document.getElementById("welcome-name").innerHTML = `Welcome ${localStorage.getItem("currentUser")}`;
+document.getElementById("welcome-name").innerHTML = `Welcome ${localStorage.getItem("currentUser")}!`;
 
-document.getElementById("test-button").addEventListener('click', ()=>{
+document.getElementById("map-redirect").addEventListener('click', ()=>{
   let url = 'https://www.google.com/maps/dir';
   for(let i = 0; i < coords.length; i++){
     url += `/${coords[i]["long"]},${coords[i]["lat"]}`.toString();
