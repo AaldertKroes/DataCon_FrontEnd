@@ -19,7 +19,7 @@ submitButton.addEventListener('click', evt => {
     password = password.hashCode();
     console.log(`${username} | ${password}`);
 
-    fetch("http://127.0.0.1:3000/user", {
+    fetch("https://atlantic-shard-bream.glitch.me/user", {
         "method": "GET",
         headers: {
             "Content-type": "application/json"
@@ -28,7 +28,7 @@ submitButton.addEventListener('click', evt => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        data.forEach(item => loginCheck(username, password, item["username"], item["password"]));
+        data.forEach(item => loginCheck(username, password, item["username"], item["password"], item["id"]));
     });
 });
 
@@ -40,10 +40,11 @@ submitButton.addEventListener('click', evt => {
  * @param {number} pass record password hashed
  * @author Aaldert Kroes
  */
-function loginCheck(curUser, curPass, user, pass){
+function loginCheck(curUser, curPass, user, pass, userId){
     console.log(curPass,pass);
     if(curUser === user && curPass == pass){
         localStorage.setItem("currentUser", curUser);
+        localStorage.setItem("currentUserId", userId);
         window.location.href = "../index.html";
     } else {
         window.location.replace("./login.html");

@@ -14,7 +14,7 @@ document.getElementById("welcome-name").innerHTML = `Welcome ${localStorage.getI
  * Collect all positional data from all devices and show the data on the dashboard.
  * @author Aaldert Kroes
  */
-fetch("http://127.0.0.1:3000/data", {
+fetch(`https://atlantic-shard-bream.glitch.me/data/${localStorage.getItem("currentUserId")}`, {
   "method": "GET",
   headers: {
     "Content-type": "application/json"
@@ -34,7 +34,7 @@ fetch("http://127.0.0.1:3000/data", {
   // Show data on index page.
   let processedData = "";
   for(let i = coords.length-1; i >= 0; i--){
-    processedData += `<p>ID: ${coords[i]["tracker_id"]} | long ${coords[i]["long"]} | lat ${coords[i]["lat"]} | time: ${coords[i]["createdAt"]}</p>`.toString();
+    processedData += `<p>ID: ${coords[i]["tracker_id"]} | lat ${coords[i]["lat"]} | long ${coords[i]["long"]} | time: ${coords[i]["createdAt"]}</p>`.toString();
   }
   document.getElementById("latest-measurements").innerHTML = processedData;
 });
@@ -56,8 +56,8 @@ document.getElementById("logout-button").addEventListener('click', ()=> {
 document.getElementById("map-redirect").addEventListener('click', ()=> {
   let url = 'https://www.google.com/maps/dir';
   for(let i = 0; i < coords.length; i++){
-    url += `/${coords[i]["long"]},${coords[i]["lat"]}`.toString();
+    url += `/${coords[i]["lat"]},${coords[i]["long"]}`.toString();
   }
-  url += `/@${coords[coords.length-1]["long"]},${coords[coords.length-1]["lat"]},17,75z`.toString();
+  url += `/@${coords[coords.length-1]["lat"]},${coords[coords.length-1]["long"]},17,75z`.toString();
   window.open(url, '_blank');
 });
