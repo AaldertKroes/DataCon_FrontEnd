@@ -2,7 +2,7 @@
 This is a small project made by Aaldert, Remko and Franklin. The purpose of this project is to make a small device that actively tracks its own position. This positional data is then sent to a backend that processes the information. That information can be recieved and viewed on the frontend of the webapplication.
 
 ## Running the project
-It is recommended to have PHP installed beforehand, because this project requires to be run on a PHP-server. The installation of PHP can be found at `https://www.php.net/manual/en/install.php`. After that, simply type `php -S localhost:8000` and visit `localhost:8000/` in your webbrowser. To fire up the backend, be sure to run the app with `php -S localhost:3000`, otherwise the frontapp cannot connect.
+It is recommended to have PHP installed beforehand, because this project requires to be run on a PHP-server. The installation of PHP can be found at `https://www.php.net/manual/en/install.php`. After that, simply type `php -S localhost:8000` and visit `localhost:8000/` in your webbrowser. Should the backend not be hosted, then there is the option to run it on a localhost server. Simply clone the repository, run `npm install` and `npm start`. The URLs used in the fetch statemets should then also be changed into `http://127.0.0.1:3000`.
 
 ### Frontend
 This repository has the contents for the frontend of the webapplication. Here you can login to your account and see where your devices are located. The location of said devices will be pinpointed in the Google-maps-API.
